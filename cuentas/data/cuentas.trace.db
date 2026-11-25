@@ -1,0 +1,408 @@
+2026-11-24 10:32:27.263459-06:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:123)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1693)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:521)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:298)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2193)
+	at org.h2.mvstore.db.Store.<init>(Store.java:140)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:160)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateDefaultDdlAutoProvider.getDefaultDdlAuto(HibernateDefaultDdlAutoProvider.java:30)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateJpaConfiguration.lambda$getVendorProperties$0(HibernateJpaConfiguration.java:124)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateSettings.getDdlAuto(HibernateSettings.java:31)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateProperties.determineDdlAuto(HibernateProperties.java:110)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateProperties.getAdditionalProperties(HibernateProperties.java:79)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateProperties.determineHibernateProperties(HibernateProperties.java:72)
+	at org.springframework.boot.hibernate.autoconfigure.HibernateJpaConfiguration.getVendorProperties(HibernateJpaConfiguration.java:125)
+	at org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration.buildJpaProperties(JpaBaseConfiguration.java:135)
+	at org.springframework.boot.jpa.EntityManagerFactoryBuilder$Builder.jpaPropertyMap(EntityManagerFactoryBuilder.java:349)
+	at org.springframework.util.function.SingletonSupplier.get(SingletonSupplier.java:114)
+	at org.springframework.boot.context.properties.PropertyMapper$Source.getValue(PropertyMapper.java:347)
+	at org.springframework.boot.context.properties.PropertyMapper$Source.to(PropertyMapper.java:278)
+	at org.springframework.boot.jpa.EntityManagerFactoryBuilder$Builder.build(EntityManagerFactoryBuilder.java:335)
+	at org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration.entityManagerFactory(JpaBaseConfiguration.java:150)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1190)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:346)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:344)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:203)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:978)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:622)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:131)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:431)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.administracioncuentas.cuentas.CuentasApplication.main(CuentasApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 68 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:998)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:293)
+	... 62 more
+2026-11-24 10:32:29.833507-06:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:123)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1693)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:521)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:298)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2193)
+	at org.h2.mvstore.db.Store.<init>(Store.java:140)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:149)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:180)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1388)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1450)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:440)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:416)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1875)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1824)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:346)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:344)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:203)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:978)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:622)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:131)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:431)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.administracioncuentas.cuentas.CuentasApplication.main(CuentasApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 67 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:998)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:293)
+	... 61 more
+2026-11-24 10:32:32.587543-06:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:123)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1693)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:521)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:298)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2193)
+	at org.h2.mvstore.db.Store.<init>(Store.java:140)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration$H2ConsoleLogger.getConnectionUrl(H2ConsoleAutoConfiguration.java:118)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration$H2ConsoleLogger.getConnectionUrls(H2ConsoleAutoConfiguration.java:114)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration$H2ConsoleLogger.lambda$new$0(H2ConsoleAutoConfiguration.java:95)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration$H2ConsoleLogger.withThreadContextClassLoader(H2ConsoleAutoConfiguration.java:103)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration$H2ConsoleLogger.<init>(H2ConsoleAutoConfiguration.java:95)
+	at org.springframework.boot.h2console.autoconfigure.H2ConsoleAutoConfiguration.h2ConsoleLogger(H2ConsoleAutoConfiguration.java:74)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1190)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:346)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:344)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1118)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:995)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:622)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:131)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:431)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.administracioncuentas.cuentas.CuentasApplication.main(CuentasApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 71 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/elias/Documentos/Documents old system/CETEQ/Ceteq examen/cuentas/data/cuentas.mv.db [2.5.252/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:998)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:293)
+	... 65 more
+2026-11-24 10:38:42.551314-06:00 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-252]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:292)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.test(WebApp.java:977)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 45 more
+2026-11-24 10:38:57.243394-06:00 database: wrong user or password; user: "ADMIN"
+org.h2.message.DbException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-252]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:292)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1038)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 45 more
+2026-11-24 11:20:22.382982-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP\000d\000a[*]NUMERO_CUENTA VARCHAR (16) NOT NULL\000d\000a\000d\000aCONSTRAINT FK_MOVIENTO_CUENTA(\000d\000a FOREIGN KEY (NUMERO_CUENTA)\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a)\000d\000a\000d\000a)"; se esperaba "(, WITH TIME ZONE, WITHOUT TIME ZONE, ARRAY, INVISIBLE, VISIBLE, NOT NULL, DEFAULT, GENERATED, ON UPDATE, NOT NULL, DEFAULT ON NULL, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP\000d\000a[*]NUMERO_CUENTA VARCHAR (16) NOT NULL\000d\000a\000d\000aCONSTRAINT FK_MOVIENTO_CUENTA(\000d\000a FOREIGN KEY (NUMERO_CUENTA)\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a)\000d\000a\000d\000a)"; expected "(, WITH TIME ZONE, WITHOUT TIME ZONE, ARRAY, INVISIBLE, VISIBLE, NOT NULL, DEFAULT, GENERATED, ON UPDATE, NOT NULL, DEFAULT ON NULL, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE MOVIMIENTO(
+ID_MOVIMIENTO NUMBER PRIMARY KEY,
+MONTO DOUBLE NOT NULL,
+TIPO_MOVIMIENTO VARCHAR(20),
+DESCRIPCION VARCHAR(100),
+FECHA TIMESTAMP
+NUMERO_CUENTA VARCHAR (16) NOT NULL
+
+CONSTRAINT FK_MOVIENTO_CUENTA(
+ FOREIGN KEY (NUMERO_CUENTA)
+ REFERENCES CUENTA(NUMERO_CUENTA)
+)
+
+) [42001-252]
+2026-11-24 11:20:40.169562-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP,\000d\000aNUMERO_CUENTA VARCHAR (16) NOT NULL\000d\000a\000d\000aCONSTRAINT FK_MOVIENTO_CUENTA[*](\000d\000a FOREIGN KEY (NUMERO_CUENTA)\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a)\000d\000a\000d\000a)"; se esperaba "PRIMARY KEY, UNIQUE, NOT NULL, CHECK, REFERENCES"
+Syntax error in SQL statement "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP,\000d\000aNUMERO_CUENTA VARCHAR (16) NOT NULL\000d\000a\000d\000aCONSTRAINT FK_MOVIENTO_CUENTA[*](\000d\000a FOREIGN KEY (NUMERO_CUENTA)\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a)\000d\000a\000d\000a)"; expected "PRIMARY KEY, UNIQUE, NOT NULL, CHECK, REFERENCES"; SQL statement:
+CREATE TABLE MOVIMIENTO(
+ID_MOVIMIENTO NUMBER PRIMARY KEY,
+MONTO DOUBLE NOT NULL,
+TIPO_MOVIMIENTO VARCHAR(20),
+DESCRIPCION VARCHAR(100),
+FECHA TIMESTAMP,
+NUMERO_CUENTA VARCHAR (16) NOT NULL
+
+CONSTRAINT FK_MOVIENTO_CUENTA(
+ FOREIGN KEY (NUMERO_CUENTA)
+ REFERENCES CUENTA(NUMERO_CUENTA)
+)
+
+) [42001-252]
+2026-11-24 11:26:38.870430-06:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY NOT NULL,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP,\000d\000aNUMERO_CUENTA VARCHAR (16) NOT NULL,\000d\000a\000d\000aCONSTRAINT FK_MOVIMIENTO_CUENTA\000d\000a FOREIGN KEY (NUMERO_CUENTA)[*],\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a\000d\000a\000d\000a)"; se esperaba "INDEX, REFERENCES"
+Syntax error in SQL statement "CREATE TABLE MOVIMIENTO(\000d\000aID_MOVIMIENTO NUMBER PRIMARY KEY NOT NULL,\000d\000aMONTO DOUBLE NOT NULL,\000d\000aTIPO_MOVIMIENTO VARCHAR(20),\000d\000aDESCRIPCION VARCHAR(100),\000d\000aFECHA TIMESTAMP,\000d\000aNUMERO_CUENTA VARCHAR (16) NOT NULL,\000d\000a\000d\000aCONSTRAINT FK_MOVIMIENTO_CUENTA\000d\000a FOREIGN KEY (NUMERO_CUENTA)[*],\000d\000a REFERENCES CUENTA(NUMERO_CUENTA)\000d\000a\000d\000a\000d\000a)"; expected "INDEX, REFERENCES"; SQL statement:
+CREATE TABLE MOVIMIENTO(
+ID_MOVIMIENTO NUMBER PRIMARY KEY NOT NULL,
+MONTO DOUBLE NOT NULL,
+TIPO_MOVIMIENTO VARCHAR(20),
+DESCRIPCION VARCHAR(100),
+FECHA TIMESTAMP,
+NUMERO_CUENTA VARCHAR (16) NOT NULL,
+
+CONSTRAINT FK_MOVIMIENTO_CUENTA
+ FOREIGN KEY (NUMERO_CUENTA),
+ REFERENCES CUENTA(NUMERO_CUENTA)
+
+
+) [42001-252]
